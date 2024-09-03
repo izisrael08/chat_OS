@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f0f0; /* Cor neutra para o fundo da página */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 1080px; /* Aumenta o tamanho da tela do chat */
+  height: 800px; /* Aumenta a altura da tela do chat */
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* CSS atualizado */
+.chat-header {
+  background: white;
+  color: rgb(0, 0, 0);
+  padding: 15px;
+  border-bottom: 2px solid #0056b3;
+  display: flex; /* Usa flexbox para o layout */
+  justify-content: space-between; /* Alinha os itens nas extremidades */
+  align-items: center; /* Centraliza verticalmente */
+  position: relative;
+}
+
+.chat-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+#search-input {
+  width: 450px; /* Ajuste a largura conforme necessário */
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+
+/* Esconde a barra de rolagem no chat-box, mas mantém a rolagem funcional */
+.chat-box {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto; /* Mantém a rolagem vertical */
+  position: relative;
+  background: linear-gradient(180deg, #003366, #66ccff); /* Gradiente suave */
+  scrollbar-width: none; /* Para navegadores Firefox */
+}
+
+/* Para navegadores WebKit (Chrome, Safari, Edge) */
+.chat-box::-webkit-scrollbar {
+  width: 0; /* Oculta a barra de rolagem */
+  background: transparent; /* Torna o fundo da barra de rolagem invisível */
+}
+
+
+.chat-message {
+  margin-bottom: 15px;
+}
+
+.chat-message .username {
+  font-weight: bold;
+  color: white; /* Nome da pessoa em branco */
+  margin-bottom: 5px;
+}
+
+.chat-message.user {
+  text-align: right;
+}
+
+.chat-message.user .message {
+  background: #007bff;
+  color: white;
+}
+
+.chat-message.bot .message {
+  background: #f1f1f1;
+  color: black;
+}
+
+.message {
+  display: inline-block;
+  padding: 12px;
+  border-radius: 12px;
+  max-width: 80%; /* Limita a largura da mensagem */
+  word-break: break-word; /* Quebra palavras longas para evitar overflow */
+  overflow-wrap: break-word; /* Quebra palavras para caber dentro do contêiner */
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+#file-input {
+  display: none;
+}
+
+#message-input {
+  flex: 1;
+  margin: 0 10px;
+  resize: none; /* Desativa a redimensão manual */
+  overflow: hidden; /* Oculta o excesso de texto */
+  transition: height 0.3s ease; /* Transição suave ao mudar a altura */
+  white-space: pre-wrap; /* Garante que o texto se quebre corretamente */
+  word-wrap: break-word; /* Quebra palavras longas para evitar overflow */
+}
+
+#message-input:focus {
+  height: 100px; /* Ajuste conforme necessário */
+}
+
+.auto-expand {
+  height: auto;
+  min-height: 40px; /* Altura mínima do campo de mensagem */
+}
+
+#send-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
